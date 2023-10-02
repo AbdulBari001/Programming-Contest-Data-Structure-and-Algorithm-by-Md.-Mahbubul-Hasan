@@ -1,1 +1,26 @@
+দুটি দ্বিমাত্রিক(2D) বিন্দুর স্থানাঙ্ক (co-ordinate) ইনপুট নিয়ে তাদের মাঝে দূরত্ব বের কর|
+Ans:
+  দুটি 2D বিন্দুর স্থানাঙ্ক (x1, y1) এবং (x2, y2) দেওয়া আছে, তাদের মাঝে দূরত্ব বের করতে হলে আপেক্ষিক দূরত্ব সূত্রটি ব্যবহার করা যায়:
+  আপেক্ষিক দূরত্ব = √((x2 - x1)² + (y2 - y1)²)
 
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main()
+{
+    double x1,x2,y1,y2;
+    cout << "Please insert value of x1:" ;
+    cin>>x1;
+    cout << "Please insert value of x2:";
+    cin>>x2;
+    cout << "Please insert value of y1:";
+    cin>>y1;
+    cout << "Please insert value of y2:";
+    cin>>y2;
+    double distance=sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));;
+    cout<<"Co-ordinate distance is:"<<distance;
+
+    return 0;
+}
