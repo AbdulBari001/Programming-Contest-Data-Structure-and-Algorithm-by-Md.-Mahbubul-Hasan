@@ -1,1 +1,47 @@
+Problem: মনে কর একটি ত্রিভুজের তিনটি বাহুর দৈর্ঘ্য যথাক্রমে 20 20 10 তিনটি কোন বের করো|
+
+Solution: 
+ #define _MATH_H
+#include <iostream>
+#include<math.h>
+#include <cmath>
+
+using namespace std;
+
+
+double calculate_angle(double c,double b,double a,char angle);
+int main()
+{
+    double ab,bc,ac,result;
+    cout << "Please insert length of AB:";
+    cin>>ab;
+    cout << "Please insert length of AC:";
+    cin>>ac;
+    cout << "Please insert length of BC:";
+    cin>>bc;
+    double angleA=calculate_angle(ab,ac,bc,'A');
+    cout<<"Angle of A:"<<angleA<<" Degree"<<"\n";
+    double angleB=calculate_angle(ab,ac,bc,'B');
+    cout<<"Angle of B:"<<angleB<<" Degree"<<"\n";
+    double angleC=calculate_angle(ab,ac,bc,'B');
+    cout<<"Angle of C:"<<angleC<<" Degree"<<"\n";
+    cout<<"\n";
+    cout<<"Sum of three angele: "<<angleA+angleB+angleC<<" Degree"<<"\n";
+    return 0;
+}
+double calculate_angle(double c,double b,double a,char angle)
+{
+    if(angle=='A'){
+        double calAngleA=(acos((pow(c,2)+pow(b,2)-pow(a,2))/(2*b*c)))*(180/3.1416);
+        return calAngleA;
+    }
+    else if(angle=='B'){
+        double calAngleB=(acos((pow(c,2)+pow(a,2)-pow(b,2))/(2*c*a)))*(180/3.1416);
+        return calAngleB;
+    }
+    else{
+        double calAngleC=(acos((pow(a,2)+pow(b,2)-pow(c,2))/(2*a*b)))*(180/3.1416);
+        return calAngleC;
+    }
+}
 
